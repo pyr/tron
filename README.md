@@ -24,7 +24,7 @@ TRON exposes very few functions, here is a small example:
     (tron/once #(tron/cancel :foo) 5000)
 
 Full documentation is available here:
-[annotated source](http://pyr.github.com/tron)
+[annotated source](http://spootnik.org/files/tron.html)
 
 ## Installation
 
