@@ -33,6 +33,20 @@ Add the following dependency to your project.clj file:
 
     [tron   "0.5.0"]
 
+If you would rather use maven, you need to specify the clojars
+repository dependency and import the tron artifact
+
+    <repository>
+        <id>clojars.org</id>
+        <url>http://clojars.org/repo</url>
+    </repository>
+     
+    <dependency>
+        <groupId>org.clojure</groupId>
+        <artifactId>tron</artifactId>
+        <version>0.5.0</version>
+    </dependency>
+
 ## License
 
 Copyright (C) 2011 Pierre-Yves Ritschard
