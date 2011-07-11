@@ -27,7 +27,7 @@
     :doc      "Shortcut for milliseconds."}
   usecs       TimeUnit/MILLISECONDS)
 
-(defn get-pool
+(defn- get-pool
   "Initiate a thread-pool for periodic tasks."
   []
   (swap! pool #(or % (ScheduledThreadPoolExecutor. @poolsize))))
