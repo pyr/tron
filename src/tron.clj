@@ -1,3 +1,9 @@
+;; TRON: Task Run ON
+;;
+;; Simple library to schedule jobs on a Java ScheduledThreadPoolExecutor.
+;; Jobs can be scheduled for recurrent execution or for single-time runs.
+;; Jobs can have nicknames to be later decomissioned.
+;;
 (ns tron
   (:import (java.util.concurrent ScheduledThreadPoolExecutor TimeUnit)))
 
@@ -31,13 +37,13 @@
   There are four different calling modes and three
   arities to this function:
 
-  * nickname f init delay: provide a nickname to the task
+  * `nickname f init delay`: provide a nickname to the task
     for later removal. the task will be executed after an
     initial delay and will recur every delay milliseconds.
-  * nickname f delay: execute the same steps, but launch
+  * `nickname f delay`: execute the same steps, but launch
     the first occurence right away.
-  * f init delay: do not provide a nickname for this tasks
-  * f delay: do not provide a nickname and start the first
+  * `f init delay`: do not provide a nickname for this tasks
+  * `f delay`: do not provide a nickname and start the first
     occurence right away."
   ([nickname f init delay]
    (let [task   (.scheduleWithFixedDelay (get-pool) f init delay usecs)]
