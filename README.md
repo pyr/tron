@@ -42,7 +42,7 @@ repository dependency and import the tron artifact
     </repository>
      
     <dependency>
-        <groupId>org.clojure</groupId>
+        <groupId>tron</groupId>
         <artifactId>tron</artifactId>
         <version>0.5.0</version>
     </dependency>
