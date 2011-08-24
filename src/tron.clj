@@ -57,6 +57,12 @@
   ([f delay]
    (periodically f 0 delay)))
 
+(defmacro do-periodically
+  "Wrap expressions in a function and execute them at the
+  given interval"
+  [delay & exprs]
+  `(periodically (fn [] (do ~@exprs)) ~delay))
+
 (defn once
   "Schedule a function for one-time execution. Optionnaly
   provide a nickname for removal."
