@@ -1,4 +1,4 @@
-(defproject tron "0.5.1"
+(defproject tron "0.5.2"
   :description "TRON: Task Run ON"
   :url "https://github.com/pyr/tron"
   :dependencies [[org.clojure/clojure "1.3.0"]]
