@@ -23,9 +23,6 @@ TRON exposes very few functions, here is a small example:
     ;; Cancel the periodic run 5 seconds from now
     (tron/once #(tron/cancel :foo) 5000)
 
-Full documentation is available here:
-[annotated source](http://spootnik.org/files/tron.html)
-
 ## Installation
 
 The easiest way to use TRON in your own projects is via Leiningen.
