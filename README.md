@@ -22,13 +22,17 @@ TRON exposes very few functions, here is a small example:
 
     ;; Cancel the periodic run 5 seconds from now
     (tron/once #(tron/cancel :foo) 5000)
+    
+    ;; Execute the followin expressions periodically
+    (tron/do-periodically 5000
+      (println "hello"))
 
 ## Installation
 
 The easiest way to use TRON in your own projects is via Leiningen.
 Add the following dependency to your project.clj file:
 
-    [tron   "0.5.0"]
+    [tron   "0.5.2"]
 
 If you would rather use maven, you need to specify the clojars
 repository dependency and import the tron artifact
@@ -41,7 +45,7 @@ repository dependency and import the tron artifact
     <dependency>
         <groupId>tron</groupId>
         <artifactId>tron</artifactId>
-        <version>0.5.0</version>
+        <version>0.5.2</version>
     </dependency>
 
 ## License
