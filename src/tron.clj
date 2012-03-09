@@ -55,7 +55,32 @@
      (let [f arg1, init arg2, delay arg3]
        (.scheduleWithFixedDelay (get-pool) f init delay usecs))))
   ([f delay]
-   (periodically f 0 delay)))
+     (periodically f 0 delay)))
+
+(defn fixed-periodically
+  "Schedule a function for fixed periodic execution.
+  There are four different calling modes and three
+  arities to this function:
+
+  * `nickname f init delay`: provide a nickname to the task
+    for later removal. the task will be executed after an
+    initial delay and will recur every delay milliseconds.
+  * `nickname f delay`: execute the same steps, but launch
+    the first occurence right away.
+  * `f init delay`: do not provide a nickname for this tasks
+  * `f delay`: do not provide a nickname and start the first
+    occurence right away."
+  ([nickname f init delay]
+   (let [task   (.scheduleAtFixedRate (get-pool) f init delay usecs)]
+     (swap! tasks assoc nickname task)))
+  ([arg1 arg2 arg3]
+   (if (= (class arg1) clojure.lang.Keyword)
+     (let [nickname arg1, f arg2, delay arg3]
+       (periodically nickname f 0 delay))
+     (let [f arg1, init arg2, delay arg3]
+       (.scheduleAtFixedRate (get-pool) f init delay usecs))))
+  ([f delay]
+   (fixed-periodically f 0 delay)))
 
 (defmacro do-periodically
   "Wrap expressions in a function and execute them at the
