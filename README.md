@@ -9,7 +9,7 @@ to make the parallel with UNIX's CRON a bit more evident.
 TRON exposes very few functions, here is a small example:
 
     (ns sandbox
-      (:require tron))
+      (:require [tr.on :as tron]))
 
     (defn- periodic [] (println "periodic"))
     (defn- ponctual [] (println "ponctual"))
@@ -36,7 +36,7 @@ TRON exposes very few functions, here is a small example:
 The easiest way to use TRON in your own projects is via Leiningen.
 Add the following dependency to your project.clj file:
 
-    [tron   "0.5.3"]
+    [spootnik/tron   "0.5.4"]
 
 If you would rather use maven, you need to specify the clojars
 repository dependency and import the tron artifact
@@ -47,9 +47,9 @@ repository dependency and import the tron artifact
     </repository>
      
     <dependency>
-        <groupId>tron</groupId>
+        <groupId>spootnik</groupId>
         <artifactId>tron</artifactId>
-        <version>0.5.2</version>
+        <version>0.5.4</version>
     </dependency>
 
 ## License

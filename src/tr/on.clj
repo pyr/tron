@@ -1,10 +1,9 @@
-;; TRON: Task Run ON
-;;
-;; Simple library to schedule jobs on a Java ScheduledThreadPoolExecutor.
-;; Jobs can be scheduled for recurrent execution or for single-time runs.
-;; Jobs can have nicknames to be later decomissioned.
-;;
-(ns tron
+(ns tr.on
+  "TRON: Task Run ON
+
+ Simple library to schedule jobs on a Java ScheduledThreadPoolExecutor.
+ Jobs can be scheduled for recurrent execution or for single-time runs.
+ Jobs can have nicknames to be later decomissioned."
   (:import (java.util.concurrent ScheduledThreadPoolExecutor TimeUnit)))
 
 (defonce
