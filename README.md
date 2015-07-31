@@ -1,4 +1,8 @@
 TRON: Task Run ON
+=================
+
+[![Build Status](https://secure.travis-ci.org/pyr/tron.png)](http://travis-ci.org/pyr/tron)
+
 
 TRON lets you schedule tasks for execution using a Java
 ScheduledThreadPoolExecutor under the hood. The name is
