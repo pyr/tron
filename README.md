@@ -40,7 +40,7 @@ TRON exposes very few functions, here is a small example:
 The easiest way to use TRON in your own projects is via Leiningen.
 Add the following dependency to your project.clj file:
 
-    [spootnik/tron   "0.5.4"]
+    [tron "0.5.4"]
 
 If you would rather use maven, you need to specify the clojars
 repository dependency and import the tron artifact
